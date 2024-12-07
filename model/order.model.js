@@ -6,7 +6,7 @@ const orderSchema = new mongoose.Schema({
   address: { type: ObjectId, ref: "clothusersaddress" },
   cloths: [{ clothsId: { type: ObjectId, ref: "ClothStore" }, quantity: { type: Number }, size: { type: String } }],
   date: { type: String, default: new Date().toLocaleDateString() },
-  totalPrice: {type: Number}
+  priceDetails: {type: Object}
 },{timestamps:true})
 
 
