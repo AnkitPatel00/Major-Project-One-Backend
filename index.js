@@ -688,7 +688,7 @@ app.get('/api/order/get', jwtAuth, async (req, res) => {
     const allOrders = await OrderModel.find({ user: id })
       .populate('user', 'firstname email mobilenumber')
       .populate('address')
-      .populate('cloths.clothsId','title imgUrl')
+      .populate('cloths.clothsId','title imgUrl price discount')
     if (!allOrders)
     {
       return res.status(500).json({error:'error in fetching order'})
