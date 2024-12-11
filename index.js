@@ -17,7 +17,7 @@ const AddressModel = require('./model/address.model')
 const WishlistModel = require('./model/wishlist.model')
 const OrderModel = require('./model/order.model')
 const corsOptions = {
-  origin: "http://localhost:5173"
+  origin: "*"
 }
 app.use(cors(corsOptions))
 
