@@ -17,9 +17,7 @@ const AddressModel = require('./model/address.model')
 const WishlistModel = require('./model/wishlist.model')
 const OrderModel = require('./model/order.model')
 const corsOptions = {
-  origin: "*",
-  credentials: true,
-  optionSuccessStatus:200
+  origin: "*"
 }
 app.use(cors(corsOptions))
 
