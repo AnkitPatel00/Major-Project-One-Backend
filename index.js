@@ -241,17 +241,14 @@ app.post('/api/users/login',async (req, res) => {
   const { email, password } = req.body
   try {
 
-     console.time('Database Query');
     const user =await UserModel.findOne({email})
-     console.time('Database Query');
 
     if (!user)
     {
      return res.status(401).json({error:'User Not Found'})
     }
- console.time('Password Comparison');
+
     const isMatch = await bcrypt.compare(password, user.password)
-     console.time('Password Comparison');
 
     if (!isMatch)
     {
