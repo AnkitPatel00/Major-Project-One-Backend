@@ -259,7 +259,7 @@ app.post('/api/users/login',async (req, res) => {
     delete userInfo.password
  
 
-    const token = jwt.sign({ id: user.id },JWT_KEY, { expiresIn: '1h' })
+    const token = jwt.sign({ id: user.id },JWT_KEY, { expiresIn: '1m' })
 
     res.status(200).json({token,user:userInfo})
   }
